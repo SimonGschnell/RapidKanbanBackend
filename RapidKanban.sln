@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidKanban", "RapidKanban\RapidKanban.csproj", "{4F60DC48-5F4E-4028-9BD5-3A47A2653E60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidKanban.Infrastructure", "RapidKanban.Infrastructure\RapidKanban.Infrastructure.csproj", "{17F53CF2-4F32-40B0-8609-8030119500EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidKanban.Domain", "RapidKanban.Domain\RapidKanban.Domain.csproj", "{BD5BF169-2231-4009-8C54-DE8D96B47CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidKanban.Application", "RapidKanban.Application\RapidKanban.Application.csproj", "{01859EDB-0061-4968-A2D0-DBA218B6F004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{4F60DC48-5F4E-4028-9BD5-3A47A2653E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F60DC48-5F4E-4028-9BD5-3A47A2653E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F60DC48-5F4E-4028-9BD5-3A47A2653E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F53CF2-4F32-40B0-8609-8030119500EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F53CF2-4F32-40B0-8609-8030119500EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F53CF2-4F32-40B0-8609-8030119500EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F53CF2-4F32-40B0-8609-8030119500EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5BF169-2231-4009-8C54-DE8D96B47CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5BF169-2231-4009-8C54-DE8D96B47CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5BF169-2231-4009-8C54-DE8D96B47CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5BF169-2231-4009-8C54-DE8D96B47CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01859EDB-0061-4968-A2D0-DBA218B6F004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01859EDB-0061-4968-A2D0-DBA218B6F004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01859EDB-0061-4968-A2D0-DBA218B6F004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01859EDB-0061-4968-A2D0-DBA218B6F004}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
