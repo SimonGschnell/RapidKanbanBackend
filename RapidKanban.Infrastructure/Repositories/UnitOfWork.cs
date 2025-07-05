@@ -7,10 +7,12 @@ public class UnitOfWork:IUnitOfWork
 {
     private AppDbContext Context { get; }
     public IUserstoryRepository UserstoryRepository { get; }
-    public UnitOfWork(AppDbContext context, IUserstoryRepository userstoryRepository)
+    public ITaskRepository TaskRepository { get; }
+    public UnitOfWork(AppDbContext context, IUserstoryRepository userstoryRepository, ITaskRepository taskRepository)
     {
         Context = context;
         UserstoryRepository = userstoryRepository;
+        TaskRepository = taskRepository;
     }
 
     public async Task<int> SaveChangesAsync()

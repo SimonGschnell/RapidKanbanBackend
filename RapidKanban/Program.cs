@@ -1,6 +1,6 @@
 using RapidKanban.Application.Extensions;
 using RapidKanban.Infrastructure;
-using RapidKanban.Infrastructure.Repositories.Extensions;
+using RapidKanban.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

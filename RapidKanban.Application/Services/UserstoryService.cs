@@ -19,4 +19,10 @@ public class UserstoryService: IUserstoryService
         await UnitOfWork.SaveChangesAsync();
         return us.Id;
     }
+
+    public async Task<Userstory> GetById(int Id)
+    {
+        var us= await UnitOfWork.UserstoryRepository.GetById(Id);
+        return us;
+    }
 }
