@@ -7,8 +7,8 @@ namespace RapidKanban.Infrastructure.Context;
 public class AppDbContext: DbContext
 {
     
-    DbSet<KanbanTask> Tasks { get; set; }
-    DbSet<Userstory> Userstories { get; set; }
+    public DbSet<KanbanTask> Tasks { get; set; }
+    public DbSet<Userstory> Userstories { get; set; }
     
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
