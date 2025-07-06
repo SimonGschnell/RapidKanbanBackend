@@ -6,4 +6,5 @@ public interface IUserstoryRepository
 {
     public Task<Userstory> CreateAsync(Userstory userstory);
     public Task<Userstory> GetById(int Id);
+    public Task<IEnumerable<Userstory>> GetAll();
 }

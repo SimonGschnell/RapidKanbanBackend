@@ -20,9 +20,41 @@ public class UserstoryService: IUserstoryService
         return us.Id;
     }
 
-    public async Task<Userstory> GetById(int Id)
+    public async Task<UserstoryDetailedDTO> GetById(int Id)
     {
         var us= await UnitOfWork.UserstoryRepository.GetById(Id);
-        return us;
+        var usDTO = new UserstoryDetailedDTO()
+        {
+            Id = us.Id,
+            Title = us.Title,
+            Description = us.Description,
+            Tasks = us.Tasks.Select(t => new TaskDTO()
+            {
+                Id = t.Id,
+                Title = t.Title,
+                Description = t.Description,
+                Status = t.Status,
+            })
+        };
+        return usDTO;
+    }
+    
+    public async Task<IEnumerable<UserstoryDetailedDTO>> GetAll()
+    {
+        var usList= await UnitOfWork.UserstoryRepository.GetAll();
+        var usDTOList = usList.Select(us => new UserstoryDetailedDTO()
+        {
+            Id = us.Id,
+            Title = us.Title,
+            Description = us.Description,
+            Tasks = us.Tasks.Select(t => new TaskDTO()
+            {
+                Id = t.Id,
+                Title = t.Title,
+                Description = t.Description,
+                Status = t.Status,
+            })
+        });
+        return usDTOList;
     }
 }

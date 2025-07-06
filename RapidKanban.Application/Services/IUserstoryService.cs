@@ -6,5 +6,6 @@ namespace RapidKanban.Application.Services;
 public interface IUserstoryService
 {
     public Task<int> CreateUserstoryAsync(CreateUserstoryDTO userstoryDTO);
-    public Task<Userstory> GetById(int Id);
+    public Task<UserstoryDetailedDTO> GetById(int Id);
+    public Task<IEnumerable<UserstoryDetailedDTO>> GetAll();
 }

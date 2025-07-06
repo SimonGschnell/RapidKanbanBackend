@@ -28,4 +28,9 @@ public class UserstoryRepository: IUserstoryRepository
         }
         return us;
     }
+
+    public async Task<IEnumerable<Userstory>> GetAll()
+    {
+        return await _context.Userstories.Include(us => us.Tasks).ToListAsync();
+    }
 }

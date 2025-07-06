@@ -21,4 +21,18 @@ public class UserstoryController: ControllerBase
         var id = await UserstoryService.CreateUserstoryAsync(userstoryDTO);
         return Ok(id);
     }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetUserstories()
+    {
+        var userStoriesDTO = await UserstoryService.GetAll();
+        return Ok(userStoriesDTO);
+    }
+    
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetUserstories(int id)
+    {
+        var userStoryDTO = await UserstoryService.GetById(id);
+        return Ok(userStoryDTO);
+    }
 }
