@@ -57,4 +57,49 @@ public class UserstoryService: IUserstoryService
         });
         return usDTOList;
     }
+
+    public async Task<IEnumerable<UserstoryDTO>> GetAllBasic()
+    {
+        var userstories = await UnitOfWork.UserstoryRepository.GetAll();
+        var userstoriesDTO = userstories.Select(us => new UserstoryDTO()
+        {
+            Id = us.Id,
+            Title = us.Title,
+            Description = us.Description,
+        });
+        return userstoriesDTO;
+    }
+
+    public async Task<UserstoryDTO> PatchUserstory(int userstoryId, PatchUserstoryDTO patchUserstoryDto)
+    {
+        var userstory = await UnitOfWork.UserstoryRepository.GetById(userstoryId);
+        if (!string.IsNullOrWhiteSpace(patchUserstoryDto.Title))
+        {
+            userstory.UpdateTitle(patchUserstoryDto.Title);
+        }
+
+        if (!string.IsNullOrWhiteSpace(patchUserstoryDto.Description))
+        {
+            userstory.UpdateDescription(patchUserstoryDto.Description);
+        }
+        await UnitOfWork.SaveChangesAsync();
+        return new UserstoryDTO()
+        {
+            Id = userstory.Id,
+            Title = userstory.Title,
+            Description = userstory.Description,
+        };
+    }
+
+    public async Task DeleteUserstory(int userstoryId)
+    {
+        var userstory = await UnitOfWork.UserstoryRepository.GetById(userstoryId);
+        // go through domain logic to remove tasks
+        foreach (var task in userstory.Tasks.ToList())
+        {
+            userstory.RemoveTask(task);
+        }
+        UnitOfWork.UserstoryRepository.Delete(userstory);
+        await UnitOfWork.SaveChangesAsync();
+    }
 }

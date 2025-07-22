@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
+using RapidKanban.Application.DTO;
 using RapidKanban.Application.Services;
+using RapidKanban.CQRS;
 
 namespace RapidKanban.Application.Extensions;
 
@@ -9,6 +11,8 @@ public static class DependencyInjectionExtensions
     {
         services.AddScoped<IUserstoryService, UserstoryService>();
         services.AddScoped<ITaskService, TaskService>();
+        services.AddScoped<ICommandHandler<CreateUserstoryCommand, UserstoryDTO>, CreateUserstoryHandler>();
+        services.AddScoped<ICommandDispatcher, CommandDispatcher>();
     }
  
 }

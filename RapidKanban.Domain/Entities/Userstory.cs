@@ -24,6 +24,14 @@ public class Userstory
     {
         _tasks.Add(kanbanTask);
     }
+
+    public void RemoveTask(KanbanTask task)
+    {
+        if (_tasks.Contains(task))
+        {
+            _tasks.Remove(task);
+        }
+    }
     
     public void UpdateTitle(string title)
     {

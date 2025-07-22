@@ -21,7 +21,7 @@ public class UserstoryRepository: IUserstoryRepository
 
     public async Task<Userstory> GetById(int Id)
     {
-        var us = await _context.Userstories.FirstOrDefaultAsync((u) => u.Id == Id);
+        var us = await _context.Userstories.Include(us=>us.Tasks).FirstOrDefaultAsync((u) => u.Id == Id);
         if (us == null)
         {
             throw new KeyNotFoundException($"Userstory with Id {Id} not found.");
@@ -32,5 +32,10 @@ public class UserstoryRepository: IUserstoryRepository
     public async Task<IEnumerable<Userstory>> GetAll()
     {
         return await _context.Userstories.Include(us => us.Tasks).ToListAsync();
+    }
+
+    public void Delete(Userstory userstory)
+    {
+        _context.Userstories.Remove(userstory);
     }
 }

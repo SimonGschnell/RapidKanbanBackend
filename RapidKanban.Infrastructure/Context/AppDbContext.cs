@@ -19,7 +19,7 @@ public class AppDbContext: DbContext
     {
         modelBuilder.Entity<KanbanTask>().Property(t => t.Status).HasConversion<string>();
         modelBuilder.Entity<Userstory>().HasMany<KanbanTask>(u=>u.Tasks).WithOne(t => t.Userstory)
-            .HasForeignKey(u => u.UserstoryId);
+            .HasForeignKey(u => u.UserstoryId).IsRequired().OnDelete(DeleteBehavior.Cascade);
         
     }
 }
