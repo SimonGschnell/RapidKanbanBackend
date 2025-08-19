@@ -1,5 +1,6 @@
 using RapidKanban.Application.DTO;
 using RapidKanban.Application.Repositories;
+using RapidKanban.Application.Services.Tasks;
 using RapidKanban.Domain.Entities;
 
 namespace RapidKanban.Application.Services;

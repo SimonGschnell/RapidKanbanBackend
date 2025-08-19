@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RapidKanban.Application.DTO;
 using RapidKanban.Application.Services;
+using RapidKanban.Application.Services.Tasks;
 using RapidKanban.Infrastructure.Repositories;
 
 namespace RapidKanban.Controllers;

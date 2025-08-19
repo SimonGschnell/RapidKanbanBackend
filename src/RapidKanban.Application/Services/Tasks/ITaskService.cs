@@ -1,6 +1,6 @@
 using RapidKanban.Application.DTO;
 
-namespace RapidKanban.Application.Services;
+namespace RapidKanban.Application.Services.Tasks;
 
 public interface ITaskService
 {
